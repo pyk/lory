@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://travis-ci.com/pyk/lory"><img alt="lory min rustc" src="https://travis-ci.com/pyk/lory.svg?branch=master"></a>
+  <a href="https://github.com/pyk/lory/actions"><img alt="lory" src="https://github.com/pyk/lory/workflows/lory/badge.svg?branch=master"></a>
   <a href="https://crates.io/crates/lory"><img alt="lory crates" src="https://img.shields.io/crates/v/lory.svg?color=%23fdc452"></a>
   <a href="https://docs.rs/lory"><img alt="lory docs" src="https://docs.rs/lory/badge.svg?color=%233b6837"></a>
   <a href="https://crates.io/crates/lory"><img alt="lory min rustc" src="https://img.shields.io/badge/rustc-stable-green.svg"></a>
