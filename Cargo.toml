@@ -1,6 +1,6 @@
 [package]
 name = "lory"
-version = "0.1.0"
+version = "2020.3.16"
 authors = ["Bayu Aldi Yansyah <bayualdiyansyah@gmail.com>"]
 edition = "2018"
 license = "Apache-2.0"
