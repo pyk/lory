@@ -1,0 +1,16 @@
+[package]
+name = "lory"
+version = "0.1.0"
+authors = ["Bayu Aldi Yansyah <bayualdiyansyah@gmail.com>"]
+edition = "2018"
+license = "Apache-2.0"
+description = "An easy-to-use Rust library for accessing the Twitter API"
+documentation = "https://docs.rs/lory/"
+homepage = "https://github.com/pyk/lory"
+repository = "https://github.com/pyk/lory"
+readme = "README.md"
+categories = ["twitter"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
