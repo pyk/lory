@@ -1,4 +1,4 @@
-name: Rust
+name: lory
 
 on:
   push:
@@ -7,11 +7,34 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        rust:
+          - stable
+          - beta
+          - nightly
     steps:
     - uses: actions/checkout@v2
-    - name: Build
-      run: cargo build --verbose
-    - name: Run tests
-      run: cargo test --verbose
+    - uses: actions-rs/toolchain@v1
+      with:
+        profile: minimal
+        toolchain: ${{ matrix.rust }}
+        override: true
+        components: rustfmt, clippy
+    - uses: actions-rs/cargo@v1
+      name: format
+      with:
+        command: fmt
+        args: --all -- --check
+    - uses: actions-rs/cargo@v1
+      name: clippy
+      with:
+        command: clippy
+        args: -- -D warnings
+    - uses: actions-rs/cargo@v1
+      name: test
+      with:
+        command: test
+        args: --verbose --all
