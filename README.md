@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="lory Logo" src="lory.png">
+  <img alt="lory Logo" src="lory.png" width="150">
   <p align="center" style="font-size:32px;"><b>lory</b></p>
   <p align="center">
     <i>
