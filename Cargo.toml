@@ -9,7 +9,7 @@ documentation = "https://docs.rs/lory/"
 homepage = "https://github.com/pyk/lory"
 repository = "https://github.com/pyk/lory"
 readme = "README.md"
-categories = ["twitter"]
+categories = ["api-bindings", "web-programming"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
