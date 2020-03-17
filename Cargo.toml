@@ -14,3 +14,7 @@ categories = ["api-bindings", "web-programming"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+
+[dev-dependencies]
+tokio = { version = "0.2", features = ["macros"] }
+warp = "0.2"
