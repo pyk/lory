@@ -14,3 +14,9 @@ categories = ["api-bindings", "web-programming"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+reqwest = { version = "0.10", features = ["json"] }
+tokio = { version = "0.2", features = ["full"] }
+oauth2 = { version = "3.0", features = ["futures-03", "reqwest-010"], default-features = false }
+
+[dev-dependencies]
+warp = "0.2"

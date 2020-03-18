@@ -1,6 +1,7 @@
 <p align="center">
-  <img alt="lory Logo" src="lory.png" width="150">
-  <p align="center" style="font-size:32px;"><b>lory</b></p>
+  <a href="https://emojipedia.org/twitter/twemoji-12.1.4/bird/">
+    <img alt="Bird on Twitter Twemoji 12.1.4" src="lory.png" width="72">
+  </a>
   <p align="center">
     <i>
     lory is an easy-to-use Rust library for accessing the Twitter API.
