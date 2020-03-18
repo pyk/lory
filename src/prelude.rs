@@ -28,5 +28,5 @@
 /// otherwise this should help cut down on futures-related imports when you're
 /// working with the `lory` crate!
 ///
-pub use crate::user::*;
+pub use crate::app::*;
 pub use crate::*;

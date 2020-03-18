@@ -124,5 +124,5 @@
 //! [Apache-2.0]: https://github.com/pyk/lory/blob/master/LICENSE
 //!
 
+pub mod app;
 pub mod prelude;
-pub mod user;

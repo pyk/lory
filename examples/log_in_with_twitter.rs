@@ -19,14 +19,29 @@
 //
 // cargo run --example log_in_with_twitter
 //
+use lory::prelude::*;
 use warp::Filter;
 
 #[tokio::main]
 async fn main() {
+    // TODO: initialize Twitter client here
+    let config = TwitterAppConfig {
+        consumer_key: "test",
+        consumer_secret: "test",
+    };
+    let app = TwitterApp::from(config);
+
     // GET /
     // Render home page with 'sign in with twitter' button
     let home_page = warp::get().map(|| {
-        warp::reply::html(
+        // Generate login url
+        let oauth_token = app.request_token().await;
+        let login_url = format!(
+            "https://api.twitter.com/oauth/authenticate?oauth_token={}",
+            oauth_token
+        );
+
+        warp::reply::html(format!(
             "
             <html>
                 <head>
@@ -34,10 +49,12 @@ async fn main() {
                 </head>
                 <body>
                     <h1>Welcome</h1>
+                    <a href='{}'>Sign in via Twitter</a>
                 </body>
             </html>
             ",
-        )
+            login_url
+        ))
     });
 
     let routes = home_page;

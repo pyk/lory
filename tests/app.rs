@@ -12,19 +12,22 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-struct UserAuthentication {
-    consumer_key: &'static str,
-    consumer_secret: &'static str,
-    access_token: &'static str,
-    access_token_secret: &'static str,
-}
+use lory::prelude::*;
+use tokio::runtime::Runtime;
 
-struct TwitterUser {
-    auth: UserAuthentication,
-}
+#[test]
+fn test_request_token() {
+    let config = TwitterAppConfig {
+        consumer_key: "",
+        consumer_secret: "",
+        callback_url: "http://127.0.0.1:3000/auth/callback",
+        permission: TwitterAppPermission::ReadAndWrite,
+    };
+    let app = TwitterApp::from(config);
 
-impl From<UserAuthentication> for TwitterUser {
-    fn from(auth: UserAuthentication) -> Self {
-        TwitterUser { auth }
-    }
+    // Run async code; build the tokio runtime first
+    let mut runtime = Runtime::new().unwrap();
+    // Run the async code
+    let authorization_url = runtime.block_on(app.get_authorization_url());
+    println!("{}", authorization_url);
 }
